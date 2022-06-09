@@ -142,6 +142,9 @@ ___
 
 ___
 ## **Pipelines para los servicios**
+
+> para poder realizar el proceso de CI/CD se plantea utilizar Gitlab en conjunto con su herramienta de integración y despliegue continuo, tambien del uso de docker y docker-compose para poder orquestar los contenedores con los microservicios, para que el despliegue continuo pueda realizarse a distintos servidores en distintas partes del mundo se plantea el uso de un IaC llamado Ansible para que esta tarea sea mas efectiva, a continuacion se muestra un boceto del pipeline que se desea utilizar.
+
 ```
 variables:
   GIT_STRATEGY: clone
