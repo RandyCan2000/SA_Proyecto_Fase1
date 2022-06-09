@@ -697,7 +697,7 @@ Microservicio destinado para la actualización de la información del usuario lo
 ___
 ### **Microservicio Votaciones (/Votes)**
 
-#### ***/allElections***
+#### ***/allElectionsActive***
 
 Microservicio destinado a retornar todas las elecciones activas dentro de la aplicacion YoVotoApp.
 
@@ -743,6 +743,67 @@ Microservicio destinado a retornar todas las elecciones activas dentro de la apl
 | StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
 | message           |Retorna un texto dependiendo el codigo de status Code|
 |elections          |Retorna un arreglo con las elecciones activas|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/allElections***
+
+Microservicio destinado a retornar todas las elecciones activas y no activas dentro de la aplicacion YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string,
+  elections: election[]
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| | |
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+|elections          |Retorna un arreglo con las elecciones activas y no activas|
 
 </div>
 
