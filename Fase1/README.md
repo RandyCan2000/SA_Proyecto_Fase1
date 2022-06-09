@@ -390,6 +390,7 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 {}
 --body
 {
+  username:string,
   codeSecure:string
 }
 ```
@@ -402,6 +403,7 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
   statusCode: number
   message: string
   token: string
+  userData: userData
 }
 ```
 
@@ -411,6 +413,7 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 
 |Parametro          |Detalle|
 |:-------------------:|:---------------:|
+| username        |DPI del usuario|
 | codeSecure        |codigo de seguridad enviado al telefono del usuario|
 
 </div>
@@ -424,6 +427,7 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 | StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
 | message           |Retorna un texto dependiendo el codigo de status Code|
 | Token             |Retorna un codigo unico con tiempo de vida limitado para poder hacer uso de todas las funcionalidad des de YoVotoApp|
+|userData|Json con informacion del usuario|
 
 </div>
 
@@ -438,3 +442,19 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 | StatusCode        |400         |Valor de error |
 
 </div>
+
+## **Modelos**
+
+### *userData*
+
+```
+{
+  username:string,
+  name:string,
+  phone:string,
+  img:string,
+  email:string,
+  country:string,
+  city:string
+}
+```
