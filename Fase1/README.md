@@ -1,9 +1,18 @@
 # SA Proyecto
 ## **Documentación Tecnica YoVotoApp**
-
 ### **Descipción general**
 > YoVotoAPP es una aplicacion destinada para realizar votaciones desde cualquier lugar del mundo desde la comodidad de un dispositivo movil.
 
+___
+## **Arquitectura y diseño de la solución**
+
+### ***Modelo Entidad Relacion YoVotoApp***
+![ER](./assets/ER_SA_PROYECTO1%20-%20ER.png)
+
+### ***Infraestructura YoVotoApp***
+![ER](./assets/ER_SA_PROYECTO1%20-%20Infraestructura.png)
+
+___
 ### **Comunicación entre los servicios**
 > la comunicación entre los servidores sera completamente REST hacia cualquier microservicio diseñado para el aplicativo de YoVoto, para poder centralizar el lugar a donde se realizan las peticiones se planteo la solucion de utilizar un middleware encargado de redireccionar el trafico a las correspondientes servicios desarrollados en los lenguajes que nos ofrescan la mejor escalabilidad y estabilidad.
 ___
