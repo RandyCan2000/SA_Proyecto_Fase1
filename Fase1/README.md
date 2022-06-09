@@ -266,26 +266,25 @@ ___
 
 Microservicio destinado a validar contraseña y rol del usuario que desea ingresar a YoVotoAPP.
 
-
-```
-#request
---headers
+***Request***
+```yml
+#headers
 {}
---body
+#body
 {
-  username:string,
-  password:string,
-  rol:string
+  username: string,
+  password: string,
+  rol: string
 }
 ```
-```
-#Response
---headers
+***Response***
+```yml
+#headers
 {}
---body
+#body
 {
-  statusCode:number
-  message:string
+  statusCode: number,
+  message: string
 }
 ```
 ### *Parametros Entrada*
@@ -327,23 +326,22 @@ Microservicio destinado a validar contraseña y rol del usuario que desea ingres
 
 Microservicio destinado a generar un codigo de seguridad y enviado al telefono celular del usuario.
 
-
-```
-#request
---headers
+***Request***
+```yml
+#headers
 {}
---body
+#body
 {
-  username:string
+  username: string
 }
 ```
-```
-#Response
---headers
+***Response***
+```yml
+#headers
 {}
---body
+#body
 {
-  statusCode: number
+  statusCode: number,
   message: string
 }
 ```
@@ -384,21 +382,23 @@ Microservicio destinado a generar un codigo de seguridad y enviado al telefono c
 
 Microservicio destinado a validar un codigo de seguridad y enviado al telefono celular del usuario.
 
-```
-#request
---headers
+***Request***
+```yml
+#headers
 {}
---body
+#body
 {
-  username:string,
-  codeSecure:string
+  username: string,
+  codeSecure: string
 }
 ```
-```
-#Response
---headers
+
+***Response***
+
+```yml
+#headers
 {}
---body
+#body
 {
   statusCode: number
   message: string
@@ -447,14 +447,14 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 
 ### *userData*
 
-```
+```yml
 {
-  username:string,
-  name:string,
-  phone:string,
-  img:string,
-  email:string,
-  country:string,
-  city:string
+  username: string,
+  name: string,
+  phone: string,
+  img: string,
+  email: string,
+  country: string,
+  city: string
 }
 ```
