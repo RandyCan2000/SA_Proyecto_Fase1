@@ -7,10 +7,19 @@ ___
 ## **Arquitectura y diseño de la solución**
 
 ### ***Modelo Entidad Relacion YoVotoApp***
+<div align="center">
+
 ![ER](./assets/ER_SA_PROYECTO1%20-%20ER.png)
 
+</div>
+
 ### ***Infraestructura YoVotoApp***
+
+<div align="center">
+
 ![ER](./assets/ER_SA_PROYECTO1%20-%20Infraestructura.png)
+
+</div>
 
 ___
 ### **Comunicación entre los servicios**
@@ -21,17 +30,29 @@ ___
 ### ***Login de usuario***
 > Esta diagrama hace referencia al login de un usuario al sistema de YoVoto.
 
+<div align="center">
+
 ![Auth_Login](./assets/Auth/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Auth_login.png)
+
+</div>
 
 ### ***Generacion Codigo Seguridad***
 > Este diagrama hace referencia al servicio que genera un codigo de seguridad y lo envia a el celular del usuario.
 
+<div align="center">
+
 ![Auth_GenCode](./assets/Auth/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Auth_GenCode.png)
+
+</div>
 
 ### ***Validación Codigo Seguridad***
 > Este diagrama hace referencia al servicio que valida un codigo de seguridad y lo envia a el celular del usuario.
 
+<div align="center">
+
 ![Auth_ValCode](./assets/Auth/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Auth_ValCode.png)
+
+</div>
 
 ___
 ## **Diagrama de actividades de emisión de voto**
@@ -39,27 +60,47 @@ ___
 ### ***Obtener Elecciones Activas***
 > Este diagrama hace referencia al servicio que retorna las elecciones activas.
 
+<div align="center">
+
 ![Voto_GetEleccion](./assets/Voto/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Voto_AllElecciones.png)
+
+</div>
 
 ### ***Obtener Opciones Elecciones Activas***
 > Este diagrama hace referencia al servicio que retorna las opciones de las elecciones activas.
 
+<div align="center">
+
 ![Voto_GetOpcionesEleccion](./assets/Voto/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Voto_GetOpciones.png)
+
+</div>
 
 ### ***Agregar voto***
 > Este diagrama hace referencia al servicio que agrega los votos a las elecciones correspondientes.
 
+<div align="center">
+
 ![Voto_AddVoto](./assets/Voto/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Voto_AddVoto.png)
+
+</div>
 
 ### ***Votos En Tiempo Real***
 > Este diagrama hace referencia al servicio que retorna la cantidad de votos en tiempo real.
 
+<div align="center">
+
 ![Voto_TimeRealVoto](./assets/Voto/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Voto_TimeReal.png)
+
+</div>
 
 ### ***Finalizar eleccion***
 > Este diagrama hace referencia al servicio que guarda los resultados de las votaciones al finalizar.
 
+<div align="center">
+
 ![Voto_FinishEleccion](./assets/Voto/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Voto_finishEleccion.png)
+
+</div>
 
 ___
 ## **Diagrama de actividades del sistema de registro (enrollamiento) de ciudadanos**
@@ -67,17 +108,29 @@ ___
 ### ***Registrar Usuario***
 > Este diagrama hace referencia al servicio que guarda compara la informacion del usuario nuevo y la almacena en base de datos.
 
+<div align="center">
+
 ![Registro_AddUser](./assets/Registro/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Registro_AddUsuario.png)
+
+</div>
 
 ### ***Obtener Informacion***
 > Este diagrama hace referencia al servicio que retorna la informacion del usuario logueado.
 
+<div align="center">
+
 ![Registro_GetInfo](./assets/Registro/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Registro_getInfoUser.png)
+
+</div>
 
 ### ***Actualizar Usuario***
 > Este diagrama hace referencia al servicio que actualiza la informacion del usuario.
 
+<div align="center">
+
 ![Registro_UpdateInfo](./assets/Registro/ER_SA_PROYECTO1%20-%20Diagrama_Micro_Registro_Update.png)
+
+</div>
 
 ___
 ## **Descripción de la seguridad de la aplicación**
