@@ -1141,7 +1141,7 @@ ___
   email: string,
   country: string,
   city: string,
-  rol: string
+  idRol: number
 }
 ```
 
