@@ -509,6 +509,67 @@ Microservicio destinado a guardar la informacion de un usuario nuevo que desee u
 
 </div>
 
+#### ***/addElection***
+
+Microservicio destinado a guardar la informacion de una eleccion nuevo que desee realizarce mediante la aplicacion YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  newElection: election
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| newElection        |modelo con la informacion de la nueva elección|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
 #### ***/getUserInfo***
 
 Microservicio destinado a retornar la información del usuario que utiliza YoVotoApp.
@@ -634,6 +695,324 @@ Microservicio destinado para la actualización de la información del usuario lo
 </div>
 
 ___
+### **Microservicio Votaciones (/Votes)**
+
+#### ***/allElections***
+
+Microservicio destinado a retornar todas las elecciones activas dentro de la aplicacion YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string,
+  elections: election[]
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| | |
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+|elections          |Retorna un arreglo con las elecciones activas|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/getOptions***
+
+Microservicio destinado a retornar las opciones de una eleccion en especifico.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  idElection: number
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string,
+  options: option[]
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+|idElection |id de la eleccion que se desean saber sus opciones|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+|options            |Retorna un arreglo con las opciones de la eleccion correspondiente|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/addVote***
+
+Microservicio destinado a guardar el voto de un usuario para una eleccion en YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  idElection: number,
+  idUser?: number,
+  idOption: number,
+  date: date 
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+|idElection |id de la eleccion a la que se votara|
+|idUser |id del usuario, es un valor opcional|
+|idOption |id de la opcion que escogio el usuario para votar|
+|date |fecha y hora que se realizo el voto|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/votesTimeReal***
+
+Microservicio destinado que retorna la cantidad de votos por opcion de una eleccion en tiempo real.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  idElection: number
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string,
+  votes: votesResult[]
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+|idElection |id de la eleccion a la que se votara|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+|votes              |Retorna un arreglo con las opciones de la eleccion y su cantidad de votos en el momento|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/finishElection***
+
+Microservicio destinado a concluir y guardar en base de datos los resultados finales de una votación.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  idElection: number
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+|idElection |id de la eleccion a la que se votara|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+___
 ## **Modelos**
 
 ### *userData*
@@ -649,5 +1028,44 @@ ___
   country: string,
   city: string,
   rol: string
+}
+```
+
+### *election*
+
+```yml
+{
+  id: number,
+  title: string,
+  description: string,
+  dateStart: date,
+  dateFinish: date,
+  options: option[]
+}
+```
+
+### *option*
+
+```yml
+{
+  title: string,
+  img: string,
+  metaData: metaData[]
+}
+```
+
+### *metaData*
+```yml
+{
+  clave: string,
+  valor: string
+}
+```
+
+### *votesResult*
+```yml
+{
+  option: option,
+  result: number
 }
 ```
