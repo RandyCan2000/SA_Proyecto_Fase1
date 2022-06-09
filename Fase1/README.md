@@ -400,9 +400,9 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 {}
 #body
 {
-  statusCode: number
-  message: string
-  token: string
+  statusCode: number,
+  message: string,
+  token: string,
   userData: userData
 }
 ```
@@ -443,6 +443,197 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
 
 </div>
 
+___
+### **Microservicio Registro (/Registry)**
+
+#### ***/addUser***
+
+Microservicio destinado a guardar la informacion de un usuario nuevo que desee utilizar la aplicacion YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  newUser: userData,
+  password: string
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| newUser        |modelo con la informacion del usuario nuevo|
+| password        |contraseña que utilizar el usuario nuevo para poder ingresar a YoVotoApp|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/getUserInfo***
+
+Microservicio destinado a retornar la información del usuario que utiliza YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  username: string
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string,
+  user: userData
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| username        |numero de DPI del usuario que se desea obtener la informacion|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+|user               |Retorna un json con la informacion almacenado en base de datos de YoVotoApp|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/updateUser***
+
+Microservicio destinado para la actualización de la información del usuario logueado en la aplicacion YoVotoApp.
+
+***Request***
+```yml
+#headers
+{
+  token: string
+}
+#body
+{
+  userUpdate: userData
+}
+```
+
+***Response***
+
+```yml
+#headers
+{}
+#body
+{
+  statusCode: number,
+  message: string
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| userUpdate        |modelo con la informacion del usuario para guardar en base de datos|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+___
 ## **Modelos**
 
 ### *userData*
@@ -453,8 +644,10 @@ Microservicio destinado a validar un codigo de seguridad y enviado al telefono c
   name: string,
   phone: string,
   img: string,
+  dpiImg: string,
   email: string,
   country: string,
-  city: string
+  city: string,
+  rol: string
 }
 ```
