@@ -256,3 +256,185 @@ deploy-project:
   only:
     - master
 ```
+
+___
+## **Contratos**
+
+### **Microservicio autenticación (/Auth)**
+
+#### ***/Login***
+
+Microservicio destinado a validar contraseña y rol del usuario que desea ingresar a YoVotoAPP.
+
+
+```
+#request
+--headers
+{}
+--body
+{
+  username:string,
+  password:string,
+  rol:string
+}
+```
+```
+#Response
+--headers
+{}
+--body
+{
+  statusCode:number
+  message:string
+}
+```
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| username        |DPI del usuario| 
+| password           |Contraseña del usuario|
+| rol           |Rol del usuario|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/generateSecureCode***
+
+Microservicio destinado a generar un codigo de seguridad y enviado al telefono celular del usuario.
+
+
+```
+#request
+--headers
+{}
+--body
+{
+  username:string
+}
+```
+```
+#Response
+--headers
+{}
+--body
+{
+  statusCode: number
+  message: string
+}
+```
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| username        |DPI del usuario|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
+
+#### ***/validateSecureCode***
+
+Microservicio destinado a validar un codigo de seguridad y enviado al telefono celular del usuario.
+
+```
+#request
+--headers
+{}
+--body
+{
+  codeSecure:string
+}
+```
+```
+#Response
+--headers
+{}
+--body
+{
+  statusCode: number
+  message: string
+  token: string
+}
+```
+
+### *Parametros Entrada*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| codeSecure        |codigo de seguridad enviado al telefono del usuario|
+
+</div>
+
+### *Parametros Salida*
+
+<div align="center">
+
+|Parametro          |Detalle|
+|:-------------------:|:---------------:|
+| StatusCode        |Retorna un valor numero que representa si la transaccion se realizo con exito| 
+| message           |Retorna un texto dependiendo el codigo de status Code|
+| Token             |Retorna un codigo unico con tiempo de vida limitado para poder hacer uso de todas las funcionalidad des de YoVotoApp|
+
+</div>
+
+<br>
+
+### *Codigos Error*
+<div align="center">
+
+|Parametro          |Valor        |Detalle        |
+|:-------------------:|:-------------:|:---------------:|
+| StatusCode        | 200         |Valor de exito |
+| StatusCode        |400         |Valor de error |
+
+</div>
