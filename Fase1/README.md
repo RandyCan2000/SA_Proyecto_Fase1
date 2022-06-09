@@ -1183,3 +1183,44 @@ ___
   result: number
 }
 ```
+
+___
+## **Json File Renap**
+
+```yml
+{
+  users: [
+    {
+      username: int,
+      name: string,
+      phone: string,
+      img: string,
+      dpiImg: string,
+      email: string,
+      country: string,
+      city: string
+    }
+  ]
+}
+```
+
+### ***Ejemplo***
+```yml
+{
+  users: [
+    {
+      username: 3005122870101,
+      name: "Randy Alexander Can Ajuchan",
+      phone: "54875373",
+      img: "http://img.jpg",
+      dpiImg: "http://img2.jpg",
+      email: "canalex210@gmail.com",
+      country: "Guatemala",
+      city: "Guatemala"
+    }
+    .
+    .
+    .
+  ]
+}
+```
